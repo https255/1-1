@@ -1,9 +1,5 @@
 @charset "utf-8";
-/*==================================================
-機能編　4-2-5　背景色が伸びる（中央から外）
-===================================*/
 
-/*========= ローディング画面のためのCSS ===============*/
 #splash {
 	position: fixed;
 	width: 100%;
@@ -21,9 +17,6 @@
 	transform: translate(-50%, -50%);
 }
 
-/*========= 画面遷移のためのCSS ===============*/
-
-/*画面遷移アニメーション*/
 
 .splashbg1,
 .splashbg2{
@@ -35,7 +28,6 @@ body.appear .splashbg2{
 	display:block;
 }
 
-/*右に消えるエリア*/
 body.appear .splashbg1{
 	animation-name:PageAnime;
 	animation-duration:1.2s;
@@ -49,7 +41,7 @@ body.appear .splashbg1{
     top: 0;
 	left:50%;
     transform: scaleX(1);
-    background-color:#e2a2b1;/*伸びる背景色の設定*/
+    background-color:#e2a2b1;
 }
 
 @keyframes PageAnime{
@@ -66,7 +58,6 @@ body.appear .splashbg1{
 	}
 }
 
-/*左に消えるエリア*/
 body.appear .splashbg2{
 	animation-name:PageAnime2;
 	animation-duration:1.2s;
@@ -80,7 +71,7 @@ body.appear .splashbg2{
     top: 0;
 	right:50%;
     transform: scaleX(1);
-    background-color:#e2a2b1;/*伸びる背景色の設定*/
+    background-color:#e2a2b1;
 }
 
 @keyframes PageAnime2{
@@ -98,12 +89,10 @@ body.appear .splashbg2{
 	}
 }
 
-/*画面遷移の後現れるコンテンツ設定*/
 #wrapper{
-	opacity: 0;/*はじめは透過0に*/
+	opacity: 0;
 }
 
-/*bodyにappearクラスがついたら出現*/
 body.appear #wrapper{
 	animation-name:PageAnimeAppear;
 	animation-duration:1s;
@@ -121,18 +110,10 @@ body.appear #wrapper{
 }
 }
 
-/*==================================================
-機能編　5-1-25 クリックしたらナビ背景コンテンツがぼかされる※IE11非対応
-===================================*/
-
-/*========= ぼかしのためのCSS ===============*/
-
 .mainblur{
 	filter: blur(8px);
 }
 
-
-/*========= ナビゲーションのためのCSS ===============*/
 
 #g-nav{
     /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
@@ -148,27 +129,22 @@ body.appear #wrapper{
 	transition: all 0.3s;
 }
 
-/*アクティブクラスがついたら透過なしにして最前面へ*/
 #g-nav.panelactive{
 	opacity: 1;
 	z-index:999;
 }
 
-/*ナビゲーションの縦スクロール*/
 #g-nav.panelactive #g-nav-list{
-    /*ナビの数が増えた場合縦スクロール*/
     position: fixed;
     z-index: 999; 
     width: 100%;
-    height: 100vh;/*表示する高さ*/
+    height: 100vh;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 }
 
-/*ナビゲーション*/
 #g-nav ul {
-    display: none;/*はじめは非表示*/
-    /*ナビゲーション天地中央揃え*/
+    display: none;
     position: absolute;
     z-index: 999;
     top:50%;
@@ -179,7 +155,6 @@ body.appear #wrapper{
 #g-nav.panelactive ul {
     display: block;
 }
-/*リストのレイアウト設定*/
 
 #g-nav li{
 	list-style: none;
@@ -196,14 +171,10 @@ body.appear #wrapper{
 	font-weight: bold;
 }
 
-/*==================================================
-機能編　5-2-2 ボタン：2本線が×に
-===================================*/
 
-/*ボタン外側*/
 .openbtn{
 	position:fixed;
-    z-index: 9999;/*ボタンを最前面に*/
+    z-index: 9999;
 	top:10px;
 	right: 10px;
 	cursor: pointer;
@@ -211,11 +182,10 @@ body.appear #wrapper{
     height:50px;
 }
 	
-/*ボタン内側*/
 
 .openbtn span{
     display: inline-block;
-    transition: all .4s;/*アニメーションの設定*/
+    transition: all .4s;
     position: absolute;
     left: 13px;
     height: 3px;
@@ -233,8 +203,6 @@ body.appear #wrapper{
   	width:30%;
 }
 
-/*activeクラスが付与されると線が回転して×に*/
-
 .openbtn.active span:nth-of-type(1) {
     top: 20px;
     left: 16px;
@@ -249,22 +217,15 @@ body.appear #wrapper{
     width: 35%;
 }
 
-/*==================================================
-機能編　9-1-2 丸が動いてスクロールを促す
-===================================*/
 
-/*スクロールダウン全体の場所*/
 .scrolldown2{
-    /*描画位置※位置は適宜調整してください*/
 	position:fixed;
 	bottom:10px;
 	left:50%;
     z-index: 2;
 }
 
-/*Scrollテキストの描写*/
 .scrolldown2 span{
-    /*描画位置*/
 	position: absolute;
 	left:10px;
 	bottom:10px;
@@ -323,11 +284,6 @@ body.appear #wrapper{
 	background:#eee;
 }
 
-/*==================================================
-機能編　　7-1-21	線から塗に変化（上から下）
-===================================*/
-
-/* ボタン共通設定 */
 .btn04 {
     /*線の基点とするためrelativeを指定*/
 	position: relative;
@@ -414,11 +370,7 @@ body.appear #wrapper{
 }
 
 
-/*==================================================
-機能編　8-1-4	ページ内にある指定の範囲内で下から出現
-===================================*/
 
-/*リンクの形状*/
 #page-top a{
 	display: flex;
 	justify-content:center;
@@ -439,7 +391,6 @@ body.appear #wrapper{
 	height: 55px;
 }
 
-/*リンクを右下に固定*/
 #page-top {
 	position: fixed;
 	right: 0;
@@ -482,9 +433,6 @@ body.appear #wrapper{
   }
 }
 
-/*==================================================
-機能編　6-1-6 複数画像を並列に見せる
-===================================*/
 .slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
    width:94%;
     margin:0 auto;
@@ -552,9 +500,6 @@ body.appear #wrapper{
     background:#e2a2b1;/*ドットボタンの現在地表示の色*/
 }
 
-/*==================================================
-   印象編 4 最低限おぼえておきたい動き
-===================================*/
 
 /* 4-1 ふわっ（その場で） */
 .fadeIn{
@@ -597,14 +542,6 @@ opacity:0;
 .zoomOutTrigger{
     opacity: 0;
 }
-
-/*===========================================================*/
-/* 印象編　8 テキストの動き　/
-/*===========================================================*/
-
-/*========= 8-2 テキストが流れるように出現（左から右） ===============*/
-
-/*全共通*/
 
 .slide-in {
 	overflow: hidden;
@@ -662,8 +599,6 @@ opacity:0;
   }
 }
 
-/*========= 8-9 テキストがじわっと出現 ===============*/
-
 .blur{
 	animation-name: blurAnime;
 	animation-duration:1s;
@@ -690,8 +625,6 @@ opacity:0;
 
 
 
-/*========= 8-17　テキストがほのかに光りながら出現 ===============*/
-
 .glowAnime span{opacity: 0;}
 .glowAnime.glow span{ animation:glow_anime_on 1s ease-out forwards; }
 @keyframes glow_anime_on{
@@ -701,9 +634,6 @@ opacity:0;
 }
 
 
-/*==================================================
-   7 画像リンクの動き
-===================================*/
 
 span.mask{
 	display: block;/*画像をくくるspanタグをブロック要素にする*/
@@ -744,7 +674,6 @@ span.mask{
   }
 }
 
-/* 7-11 背景が出現＋テキスト（上から） */
 
 .bgDU,
 .bgDU .mask{
@@ -787,9 +716,6 @@ span.mask{
 	opacity:1;/*透過なしに変化*/
 }
 
-/*==================================================
-    印象編　6-7 スクロールするとヘッダー背景画像が拡大（エリアの動き）
-===================================*/
 
 #header{
 	position: relative;/*背景を設定するdivの基点とするためrelativeをかける*/
